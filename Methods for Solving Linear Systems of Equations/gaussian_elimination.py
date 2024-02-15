@@ -32,7 +32,6 @@ def forward_substitution(mat):
             if abs(mat[i][k]) > v_max:
                 v_max = mat[i][k]
                 pivot_row = i
-
         # if a principal diagonal element is zero,it denotes that matrix is singular,
         # and will lead to a division-by-zero later.
         if not mat[k][pivot_row]:
@@ -80,9 +79,11 @@ def backward_substitution(mat):
 if __name__ == '__main__':
 
     A_b = [[1, -1, 2, -1, -8],
-        [2, -2, 3, -3, -20],
-        [1, 1, 1, 0, -2],
-        [1, -1, 4, 3, 4]]
+           [2, -2, 3, -3, -20],
+           [1, 1, 1, 0, -2],
+           [1, -1, 4, 3, 4]]
+
+
 
     result = gaussianElimination(A_b)
     if isinstance(result, str):
