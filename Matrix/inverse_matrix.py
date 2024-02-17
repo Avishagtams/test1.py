@@ -9,6 +9,7 @@ The resulting identity matrix will be the inverse of the input matrix if it is n
  If the input matrix is singular (i.e., its diagonal elements become zero during row operations), it raises an error.
 """
 
+
 def inverse(matrix):
     print(bcolors.OKBLUE, f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n", bcolors.ENDC)
     if matrix.shape[0] != matrix.shape[1]:
@@ -20,7 +21,7 @@ def inverse(matrix):
 
     # Perform row operations to transform the input matrix into the identity matrix
     for i in range(n):
-        if matrix[i, i] == 0:
+        if matrix[i, i] == 0 :
             raise ValueError("Matrix is singular, cannot find its inverse.")
 
         if matrix[i, i] != 1:
@@ -53,10 +54,20 @@ def inverse(matrix):
 
 
 if __name__ == '__main__':
+    """"
+    Date: 19/2/24
+    Group: Avishag Tamssut id-326275609
+            Merav Hashta id-214718405
+            Sahar Emmuna id-213431133
+    Git: 
+    Name: Avishag Tamssut 326275609
+    input:
 
-    A = np.array([[1, 2, 3],
-                  [2, 3, 4],
-                  [3, 4, 6]])
+    """
+
+    A = np.array([[1, 10, -10],
+                  [0, 4, 6],
+                  [0, 1, 9]])
     """
     A = np.array([[2, 1, 0, 0],
                   [3, 2, 0, 0],

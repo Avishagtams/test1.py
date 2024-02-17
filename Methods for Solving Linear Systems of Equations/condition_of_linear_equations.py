@@ -43,7 +43,7 @@ def condition_number(A):
 
 
 if __name__ == '__main__':
-    A = np.array([[2, 1.7, -2.5],
+    A = np.array([[1, 1.7, 1],
                   [1.24, -2, -0.5],
                   [3, 0.2, 1]])
     cond = condition_number(A)

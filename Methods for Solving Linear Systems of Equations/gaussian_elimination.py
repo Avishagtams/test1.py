@@ -33,6 +33,8 @@ def forward_substitution(mat):
                 v_max = mat[i][k]
                 pivot_row = i
         # if a principal diagonal element is zero,it denotes that matrix is singular,
+        if abs(mat[k][k]) < 1e-10:
+            mat[k][k] = 0
         # and will lead to a division-by-zero later.
         if not mat[k][pivot_row]:
             return k  # Matrix is singular
@@ -78,10 +80,10 @@ def backward_substitution(mat):
 
 if __name__ == '__main__':
 
-    A_b = [[1, -1, 2, -1, -8],
-           [2, -2, 3, -3, -20],
-           [1, 1, 1, 0, -2],
-           [1, -1, 4, 3, 4]]
+    A_b = ([[1, -2, 3, -4, 4],
+             [0, 2, -1, 1, -3],
+             [1, 3, -3, 0, 1],
+                  [2, 1, 3, -7, 5]])
 
 
 
