@@ -1,6 +1,7 @@
 import numpy as np
 from colors import bcolors
 from matrix_utility import swap_row
+from condition_of_linear_equations import condition_number
 
 
 def gaussianElimination(mat):
@@ -80,11 +81,18 @@ def backward_substitution(mat):
 
 if __name__ == '__main__':
 
-    A_b = ([[1, -2, 3, -4, 4],
-             [0, 2, -1, 1, -3],
-             [1, 3, -3, 0, 1],
-                  [2, 1, 3, -7, 5]])
-
+    A_b = ([[1, 2, 3, 4, 5],
+             [2, 3, 4, 5, 1],
+             [0, 0, 0, 0, 0],
+                  [24, 15, 22, 1, 8]])
+    A_bs = np.array([[1, 2, 3, 4],
+            [2, 3, 4, 5],
+            [0, 3, 0, 0],
+            [24, 15, 22, 1]])
+    cond = condition_number(A_bs)
+    if condition_number(A_bs) > 2:
+        print(f"pay attention that the solution may not be exact, the cond: {cond}.\n ")
+        print(cond)
 
 
     result = gaussianElimination(A_b)
