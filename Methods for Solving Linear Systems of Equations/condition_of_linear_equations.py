@@ -48,6 +48,7 @@ if __name__ == '__main__':
                   [3, 0.2, 1]])
     cond = condition_number(A)
 
+
     print(bcolors.OKGREEN, "\n condition number: ", cond, bcolors.ENDC)
 
 
