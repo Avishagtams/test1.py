@@ -92,7 +92,6 @@ if __name__ == '__main__':
     cond = condition_number(A_bs)
     if condition_number(A_bs) > 2:
         print(f"pay attention that the solution may not be exact, the cond: {cond}.\n ")
-        print(cond)
 
 
     result = gaussianElimination(A_b)
